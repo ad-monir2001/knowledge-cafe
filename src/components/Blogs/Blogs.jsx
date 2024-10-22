@@ -13,7 +13,7 @@ const Blogs = ({handleAddBookmark, handleReadingTime}) => {
     <div className="w-2/3">
       
       {
-        blogs.map(blog => <Blog 
+        blogs.map(blog => <Blog idx 
             key={blog.id} 
             blog={blog}
             handleAddBookmark={handleAddBookmark}

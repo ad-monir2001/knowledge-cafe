@@ -3,7 +3,7 @@ import { FaRegBookmark } from "react-icons/fa";
 
 const Blog = ({blog, handleAddBookmark, handleReadingTime}) => {
 
-    const {title,cover,author_img,author,posted_date,hash_tag,reading_time} = blog
+    const {title,cover,author_img,author,posted_date,hash_tag,reading_time, id} = blog
     return (
         <div className='space-y-4 my-10'>
             <img className='rounded-lg' src={cover} alt="cover_photo" />
@@ -25,7 +25,7 @@ const Blog = ({blog, handleAddBookmark, handleReadingTime}) => {
             </div>
             <h1 className='font-bold text-3xl'>{title}</h1>    
             <p className='font-medium text-xl text-gray-500'>{hash_tag}</p>
-            <button className='text-[#6047EC] font-semibold text-xl underline' onClick={()=>handleReadingTime(reading_time)}>Mark as Read</button>         
+            <button className='text-[#6047EC] font-semibold text-xl underline' onClick={()=>handleReadingTime(reading_time, id)}>Mark as Read</button>         
         </div>
     );
 };
