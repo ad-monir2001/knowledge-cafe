@@ -5,23 +5,27 @@ import Bookmarks from './components/Bookmarks/Bookmarks';
 import Header from './components/Header';
 
 function App() {
-
   const [bookmarks, setBookmarks] = useState([]);
-
-  const handleAddBookmark = blog => {
-    const newBookmarks = [...bookmarks, blog]
+  const [readingTime, setReadingTime] = useState(0);
+  const handleAddBookmark = (blog) => {
+    const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks);
-  }
-
-
-
+  };
+  const handleReadingTime = (time) => {
+    const newReadingTime = readingTime + time;
+    setReadingTime(newReadingTime);
+  };
 
   return (
     <>
       <Header></Header>
-      <main className='flex container mx-auto py-5 px-4'>
-        <Blogs handleAddBookmark= {handleAddBookmark}></Blogs>
-        <Bookmarks bookmarks={bookmarks}></Bookmarks>
+      <main className="flex container mx-auto py-5 px-4">
+        <Blogs
+          handleAddBookmark={handleAddBookmark}
+          handleReadingTime={handleReadingTime}
+
+        ></Blogs>
+        <Bookmarks bookmarks={bookmarks} readingTime={readingTime}></Bookmarks>
       </main>
     </>
   );
